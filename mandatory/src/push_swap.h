@@ -16,6 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+int	ft_isvalid(char c);
+
+
 #endif
+
+
 
 // pinga
