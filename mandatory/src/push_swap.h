@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/01/21 13:49:59 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/02/13 14:04:38 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../../Libft/libft.h"
+# include "../../ft_printf/ft_printf.h"
 
-int	ft_isvalid(char c);
+
+int	ft_isvalid(char a, char b);
 
 
 #endif

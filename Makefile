@@ -11,9 +11,8 @@ LIB = $(LIBDIR2)/libprintf.a $(LIBDIR1)/libft.a
 # Flags para las librerías
 #LIBS = -L$(LIBDIR1) -lpinga -L$(LIBDIR2) -lprintf
 
-SRC = 	mandatory/src/push_swap.c \
-
-
+SRC =	./mandatory/src/utils.c \
+		./mandatory/src/main.c
 
 
 
