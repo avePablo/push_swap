@@ -1,10 +1,29 @@
 #include "push_swap.h"
 
-int	ft_isvalid(char a, char b)
+int	ft_isvalid(char *args[])
 {
-	if (!((a >= '0' && a <= '9')||(a == '-')))
-		return (0);
-	if (!((a >= '0' && a <= '9')&&(b == '-')))
-		return (0);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+	while(args[i])
+	{
+		j = 0;
+		while(args[i][j])
+			{
+				if (!((args[i][j] >= '0' && args[i][j] <= '9')||(args[i][j] == '-')))
+					return (0);
+				if (args[i][j] == '-')
+				{
+					j++;
+					if (!((args[i][j] >= '0' && args[i][j] <= '9')||(args[i][j] == '-')))
+					return (0);
+				}
+				j++;
+			}
+	i++;
+	}
 	return (1);
 }

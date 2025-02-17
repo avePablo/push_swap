@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/13 14:04:38 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/02/17 23:18:24 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "../../Libft/libft.h"
 # include "../../ft_printf/ft_printf.h"
 
+int	ft_isvalid(char *args[]);
 
-int	ft_isvalid(char a, char b);
 
 
 #endif
