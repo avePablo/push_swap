@@ -1,33 +1,25 @@
 #include "push_swap.h"
-#include "stdio.h"
 
-    int main (int argc, char *argv[])
-    {
-        int i;
-        int j;
-        
-        i = 1;
-        j = 0;   
-        argc -= 1;
+int main (int argc, char *argv[])
+{
+char **args;
+int i;
 
-        while (argv[i] != NULL)
-        {
-            j = 0;
-            while(argv[i][j] != '\0')
-            {
-                if(argv[i][j] == '"')
-                {
-                   *argv[i] = ft_split(argv[i],' ');
-                }
-                if(ft_isvalid(argv[i][j],argv[i][j+1]) == 0)
-                {
-                    printf("%s\n", "error");    
-                    return(1);
-                }
-                j++;
+i = 1;
+while (i < argc)
+{
+    args = ft_split(argv[i], ' ');
+    if(args == NULL)
+        return(1);
+    i++;
+}
 
-            }   
-            i++;
-        }
-    return(0);
-    }
+int j;
+j = 0;
+while (args[j] != NULL)
+{
+    ft_printf("%s\n", args[j]);
+    j++;
+}
+return (0);
+}
