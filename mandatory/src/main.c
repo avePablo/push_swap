@@ -1,37 +1,43 @@
 #include "push_swap.h"
 
-int checkvalues(char *args[])
-{
-    if(ft_isvalid(args) == 0)
-        return(1);
-    return(0);
-}
-
-int main (int argc, char *argv[])
+void get_nums (int argc, char *argv[], t_stack stack_a)
 {
 char **args;
 int i;
+int j;
 
+j = 0;
 i = 1;
 while (i < argc)
 {
     args = ft_split(argv[i], ' ');
     if(args == NULL)
-        return(1);
-    if(checkvalues(args) == 1)
+        exit(1);
+    while(args[j] != NULL)
+    {
+    if(ft_isvalid(args) == 0)
     {
         ft_printf("%s\n","error loool vaya tonto lmao");
-        return(1);
+        exit(1);
+    }
+    push(&stack_a, ft_atoi(args[j]));
+    ft_printf("%i\n", stack_a);
+    j++;
     }
     i++;
 }
-
-int j;
-j = 0;
-while (args[j] != NULL)
-{
-    ft_printf("%s\n", args[j]);
-    j++;
 }
-return (0);
+
+int main (int argc, char *argv[])
+{
+    t_stack stack_a;
+    t_stack stack_b;
+
+    init_stack(&stack_a);
+    init_stack(&stack_b);
+
+    get_nums(argc, argv, stack_a);
+
+  
+    return 0;
 }

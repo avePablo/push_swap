@@ -12,7 +12,8 @@ LIB = $(LIBDIR2)/libprintf.a $(LIBDIR1)/libft.a
 #LIBS = -L$(LIBDIR1) -lpinga -L$(LIBDIR2) -lprintf
 
 SRC =	./mandatory/src/utils.c \
-		./mandatory/src/main.c
+		./mandatory/src/main.c \
+		./mandatory/src/stack.c
 
 
 

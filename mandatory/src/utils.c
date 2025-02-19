@@ -13,14 +13,10 @@ int	ft_isvalid(char *args[])
 		j = 0;
 		while(args[i][j])
 			{
-				if (!((args[i][j] >= '0' && args[i][j] <= '9')||(args[i][j] == '-')))
-					return (0);
 				if (args[i][j] == '-')
-				{
 					j++;
-					if (!((args[i][j] >= '0' && args[i][j] <= '9')||(args[i][j] == '-')))
+				if (!(args[i][j] >= '0' && args[i][j] <= '9'))
 					return (0);
-				}
 				j++;
 			}
 	i++;

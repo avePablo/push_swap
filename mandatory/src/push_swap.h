@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/17 23:18:24 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:42:02 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,22 @@
 # include "../../Libft/libft.h"
 # include "../../ft_printf/ft_printf.h"
 
-int	ft_isvalid(char *args[]);
+// Definición de nodo de la pila
+typedef struct s_node {
+    int value;
+    struct s_node *next;
+} t_node;
 
+// Definición de la pila
+typedef struct s_stack {
+    t_node *top; // Apunta al tope de la pila
+} t_stack;
+
+
+int	ft_isvalid(char *args[]);
+void init_stack(t_stack *stack);
+int is_empty(t_stack *stack);
+void push(t_stack *stack, int value);
 
 
 #endif
