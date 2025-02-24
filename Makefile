@@ -13,7 +13,9 @@ LIB = $(LIBDIR2)/libprintf.a $(LIBDIR1)/libft.a
 
 SRC =	./mandatory/src/utils.c \
 		./mandatory/src/main.c \
-		./mandatory/src/stack.c
+		./mandatory/src/stack.c \
+		./mandatory/src/moves_1.c \
+		./mandatory/src/moves_2.c 
 
 
 

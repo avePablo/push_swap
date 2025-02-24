@@ -1,15 +1,22 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
+
+
 void print_stack(t_stack *stack)
 {
-    t_node *current = stack->top;  // Empezamos desde el primer nodo
-    ft_printf("%d\n", current->value); // Imprimir el valor del nodo
-    current = current->next; // Mover al siguiente nodo
+    t_node *current = stack->top;
+
+    while (current) // Recorrer toda la pila
+    {
+        ft_printf("%d\n", current->value);
+        current = current->next;
+    }
 }
 
 
-void get_nums(int argc, char *argv[], t_stack *stack_a)
+
+int get_nums(int argc, char *argv[], t_stack *stack_a)
 {
     char **args;
     int i, j;
@@ -29,11 +36,13 @@ void get_nums(int argc, char *argv[], t_stack *stack_a)
                 exit(1);
             }
             push(stack_a, ft_atoi(args[j]));
-            print_stack(stack_a); // Imprimir dirección de memoria correctamente
             j++;
         }
         i++;
     }
+    ft_printf ("pila xd:\n");
+    print_stack(stack_a);
+    return (i);
 }
 
 int main(int argc, char *argv[])
@@ -46,8 +55,11 @@ int main(int argc, char *argv[])
 
     init_stack(stack_a);
     init_stack(stack_b);
+    
+    quick(stack_a, 0, get_nums(argc, argv, stack_a)-1);
+    ft_printf("sorted:");
 
-    get_nums(argc, argv, stack_a);
+    print_stack(stack_a); // Imprimir dirección de memoria correctamente
 
     free(stack_a);
     free(stack_b);
