@@ -42,7 +42,7 @@ int get_nums(int argc, char *argv[], t_stack *stack_a)
     }
     ft_printf ("pila xd:\n");
     print_stack(stack_a);
-    return (i);
+    return (i - 1);
 }
 
 int main(int argc, char *argv[])
@@ -57,8 +57,7 @@ int main(int argc, char *argv[])
     init_stack(stack_b);
     
     quick(stack_a, 0, get_nums(argc, argv, stack_a)-1);
-    ft_printf("sorted:");
-
+    ft_printf("sorted:\n");
     print_stack(stack_a); // Imprimir dirección de memoria correctamente
 
     free(stack_a);

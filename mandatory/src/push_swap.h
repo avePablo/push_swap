@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/24 16:42:35 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/02/27 14:39:17 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,14 @@ int get_value_at_index(t_stack *stack, int index);
 void set_value_at_index(t_stack *stack, int index, int value);
 
 void quick(t_stack *stack, int min, int max);
+
+void push_to_b(t_stack *a, t_stack *b, int pivot);
+
+void move_max_to_top(t_stack *b);
+
+void push_back_to_a(t_stack *a, t_stack *b);
+
+void k_sort(t_stack *a, t_stack *b);
 
 #endif
 
