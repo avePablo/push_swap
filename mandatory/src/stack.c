@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:47:24 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/24 16:42:24 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/02/27 16:49:54 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,17 @@ void push(t_stack *stack, int value)
     new_node->value = value;
     new_node->next = stack->top;
     stack->top = new_node;
+}
+
+int stack_length(t_stack *stack)
+{
+    int length = 0;
+    t_node *current = stack->top;
+
+    while (current)
+    {
+        length++;
+        current = current->next;
+    }
+    return length;
 }

@@ -45,23 +45,53 @@ int get_nums(int argc, char *argv[], t_stack *stack_a)
     return (i - 1);
 }
 
+#include "push_swap.h"
+#include <stdlib.h>
+
 int main(int argc, char *argv[])
 {
     t_stack *stack_a = malloc(sizeof(t_stack));
     t_stack *stack_b = malloc(sizeof(t_stack));
 
     if (!stack_a || !stack_b)
-        exit(1);
+        return (1);
 
     init_stack(stack_a);
     init_stack(stack_b);
-    
-    quick(stack_a, 0, get_nums(argc, argv, stack_a)-1);
-    ft_printf("sorted:\n");
-    print_stack(stack_a); // Imprimir dirección de memoria correctamente
+
+    if (argc > 1)
+        get_nums(argc, argv, stack_a); // Llenar stack_a con los números
+
+    if (!is_empty(stack_a)) // Si hay números, ejecutar k_sort
+        k_sort(stack_a, stack_b);
+
+    ft_printf("Stack A ordenado:\n");
+    print_stack(stack_a);
 
     free(stack_a);
     free(stack_b);
 
-    return 0;
+    return (0);
 }
+
+
+// int main(int argc, char *argv[])
+// {
+//     t_stack *stack_a = malloc(sizeof(t_stack));
+//     t_stack *stack_b = malloc(sizeof(t_stack));
+
+//     if (!stack_a || !stack_b)
+//         exit(1);
+
+//     init_stack(stack_a);
+//     init_stack(stack_b);
+    
+//     quick(stack_a, 0, get_nums(argc, argv, stack_a)-1);
+//     ft_printf("sorted:\n");
+//     print_stack(stack_a); // Imprimir dirección de memoria correctamente
+
+//     free(stack_a);
+//     free(stack_b);
+
+//     return 0;
+// }

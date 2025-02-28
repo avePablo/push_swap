@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/27 14:39:17 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/02/27 16:50:05 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void move_max_to_top(t_stack *b);
 void push_back_to_a(t_stack *a, t_stack *b);
 
 void k_sort(t_stack *a, t_stack *b);
+
+int stack_length(t_stack *stack);
 
 #endif
 
