@@ -18,17 +18,14 @@
 # include "../../Libft/libft.h"
 # include "../../ft_printf/ft_printf.h"
 
-// Definición de nodo de la pila
 typedef struct s_node {
     int value;
     struct s_node *next;
 } t_node;
 
-// Definición de la pila
 typedef struct s_stack {
-    t_node *top; // Apunta al tope de la pila
+    t_node *top;
 } t_stack;
-
 
 int	ft_isvalid(char *args[]);
 
@@ -77,7 +74,3 @@ void k_sort(t_stack *a, t_stack *b);
 int stack_length(t_stack *stack);
 
 #endif
-
-
-
-// pinga

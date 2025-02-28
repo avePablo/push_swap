@@ -1,25 +1,37 @@
 #include "push_swap.h"
-#include <stdlib.h>
-
-
 
 void print_stack(t_stack *stack)
 {
     t_node *current = stack->top;
 
-    while (current) // Recorrer toda la pila
+    while (current)
     {
         ft_printf("%d\n", current->value);
         current = current->next;
     }
 }
 
+int node_repeat(t_stack *stack)
+{
+     t_node *current = stack->top;
 
+    while (current && current->next)
+    {
+        if (current->value == current->next->value)
+            {
+            ft_printf("repes\n");
+            exit(1);
+            }
+        current = current->next;
+    }
+    return 0; 
+}
 
 int get_nums(int argc, char *argv[], t_stack *stack_a)
 {
     char **args;
     int i, j;
+    long long int num;
 
     i = 1;
     while (i < argc)
@@ -32,21 +44,17 @@ int get_nums(int argc, char *argv[], t_stack *stack_a)
         {
             if (ft_isvalid(args) == 0)
             {
-                ft_printf("%s\n", "error loool vaya tonto lmao");
+                ft_printf("%s\n", "caracter no vale");
                 exit(1);
             }
-            push(stack_a, ft_atoi(args[j]));
+            num = ft_atoi(args[j]);
+            push(stack_a, num);
             j++;
         }
         i++;
     }
-    ft_printf ("pila xd:\n");
-    print_stack(stack_a);
     return (i - 1);
 }
-
-#include "push_swap.h"
-#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
@@ -60,12 +68,11 @@ int main(int argc, char *argv[])
     init_stack(stack_b);
 
     if (argc > 1)
-        get_nums(argc, argv, stack_a); // Llenar stack_a con los números
-
-    if (!is_empty(stack_a)) // Si hay números, ejecutar k_sort
+        get_nums(argc, argv, stack_a); 
+       
+    if (!is_empty(stack_a)) 
         k_sort(stack_a, stack_b);
-
-    ft_printf("Stack A ordenado:\n");
+    node_repeat(stack_a);
     print_stack(stack_a);
 
     free(stack_a);
@@ -73,25 +80,3 @@ int main(int argc, char *argv[])
 
     return (0);
 }
-
-
-// int main(int argc, char *argv[])
-// {
-//     t_stack *stack_a = malloc(sizeof(t_stack));
-//     t_stack *stack_b = malloc(sizeof(t_stack));
-
-//     if (!stack_a || !stack_b)
-//         exit(1);
-
-//     init_stack(stack_a);
-//     init_stack(stack_b);
-    
-//     quick(stack_a, 0, get_nums(argc, argv, stack_a)-1);
-//     ft_printf("sorted:\n");
-//     print_stack(stack_a); // Imprimir dirección de memoria correctamente
-
-//     free(stack_a);
-//     free(stack_b);
-
-//     return 0;
-// }

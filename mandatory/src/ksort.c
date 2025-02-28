@@ -1,6 +1,4 @@
 #include "push_swap.h"
-#include <stdlib.h>
-
 // Encontrar el valor del pivote en la pila sin usar arrays
 int find_pivot(t_stack *stack, int size)
 {

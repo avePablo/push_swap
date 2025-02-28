@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdlib.h>
 
 // Rotate para la pila A
 void ra(t_stack *stack_a)

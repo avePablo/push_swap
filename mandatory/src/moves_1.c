@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdlib.h>
 
 // Swap para la pila A
 void sa(t_stack *stack_a)
