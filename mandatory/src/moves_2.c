@@ -16,6 +16,7 @@ void ra(t_stack *stack_a)
         first->next = NULL;
         last->next = first;
     }
+    ft_printf("ra\n");
 }
 
 // Rotate para la pila B
@@ -34,6 +35,7 @@ void rb(t_stack *stack_b)
         first->next = NULL;
         last->next = first;
     }
+    ft_printf("rb\n");
 }
 
 // Rotate simultáneo (ra y rb)
@@ -41,6 +43,7 @@ void rr(t_stack *stack_a, t_stack *stack_b)
 {
     ra(stack_a);
     rb(stack_b);
+    ft_printf("rr\n");
 }
 
 // Reverse rotate para la pila A
@@ -59,6 +62,7 @@ void rra(t_stack *stack_a)
         last->next = stack_a->top;
         stack_a->top = last;
     }
+    ft_printf("rra\n");
 }
 
 // Reverse rotate para la pila B
@@ -77,4 +81,5 @@ void rrb(t_stack *stack_b)
         last->next = stack_b->top;
         stack_b->top = last;
     }
+    ft_printf("rrb\n");
 }

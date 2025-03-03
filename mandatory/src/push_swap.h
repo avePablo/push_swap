@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/27 16:50:05 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/03 19:59:42 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 typedef struct s_node {
     int value;
+    int index;
     struct s_node *next;
 } t_node;
 
@@ -57,20 +58,22 @@ void rrb(t_stack *stack_b);
 
 void rrr(t_stack *stack_a, t_stack *stack_b);
 
-int get_value_at_index(t_stack *stack, int index);
-
-void set_value_at_index(t_stack *stack, int index, int value);
-
-void quick(t_stack *stack, int min, int max);
-
-void push_to_b(t_stack *a, t_stack *b, int pivot);
-
-void move_max_to_top(t_stack *b);
-
-void push_back_to_a(t_stack *a, t_stack *b);
-
-void k_sort(t_stack *a, t_stack *b);
-
 int stack_length(t_stack *stack);
+
+void assign_indices(t_stack *stack_a);
+
+void store_nodes(t_stack *stack_a, t_node **nodes, int size);
+
+void sort_nodes(t_node **nodes, int size);
+
+void assign_sorted_indices(t_node **nodes, int size);
+
+void k_sort(t_stack *stack_a, int k);
+
+void partial_sort(t_stack *stack_a, int k);
+
+void rebuild_stack(t_stack *stack_a, t_node **nodes, int size);
+
+double sqrt(double nbr); 
 
 #endif
