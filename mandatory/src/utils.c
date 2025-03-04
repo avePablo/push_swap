@@ -1,14 +1,22 @@
 #include "push_swap.h"
 
-double sqrt(double nbr) {
+int	ft_sqrt(int num)
+{
+	int	i;
 
-    double estimate = nbr / 2.0;  
-    
-    while ((estimate * estimate) - nbr > 0 || (nbr - (estimate * estimate)) > 0) {
-        estimate = (estimate + nbr / estimate) / 2.0;
-    }
-    
-    return estimate;
+	if (num < 4)
+		return (1);
+	i = 2;
+	while (i * i < num)
+	{
+		i++;
+	}
+	if (i * i > num)
+	{
+		if ((i * i - num) < ((i - 1) * (i - 1) + (-num)))
+			return (i);
+	}
+	return (i - 1);
 }
 
 int	ft_isvalid(char *args[])

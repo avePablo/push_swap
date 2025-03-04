@@ -58,6 +58,18 @@ void assign_indices(t_stack *stack_a)
     store_nodes(stack_a, nodes, size);
     sort_nodes(nodes, size);
     assign_sorted_indices(nodes, size);
-    
     free(nodes);
+}
+
+
+void reverse_indices(t_stack *stack_a)
+{
+    int size = stack_length(stack_a);
+    t_node *current = stack_a->top;
+
+    while (current)
+    {
+        current->index = size - 1 - current->index;
+        current = current->next;
+    }
 }

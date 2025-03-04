@@ -1,58 +1,72 @@
 #include "push_swap.h"
 
-void partial_sort(t_stack *stack_a, int k)
+void push_to_b_in_chunks(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 {
     int i = 0;
     int size = stack_length(stack_a);
-    while (i < size - 1)
+
+    while (!is_empty(stack_a))
     {
-        int j = i + 1;
-        while (j < size && j <= i + k)
+        if (stack_a->top->index <= i)
         {
-            t_node *first = stack_a->top;
-            t_node *second = first->next;
-            int count = 0;
-            while (count < j - i && second)
-            {
-                first = second;
-                second = second->next;
-                count++;
-            }
-            if (second && first->index > second->index)
-                sa(stack_a);
-            j++;
+            pb(stack_a, stack_b);
+            if (stack_length(stack_b) > 1)
+                rb(stack_b);
+            i++;
         }
-        i++;
+        else if (stack_a->top->index <= i + chunk_size)
+        {
+            pb(stack_a, stack_b);
+            i++;
+        }
+        else
+            ra(stack_a);
     }
 }
 
-void rebuild_stack(t_stack *stack_a, t_node **nodes, int size)
+int find_moves_to_top(t_stack *stack, int target_index)
 {
-    stack_a->top = nodes[0];
-    t_node *current = stack_a->top;
-    int i = 1;
-    while (i < size)
+    t_node *current = stack->top;
+    int moves = 0;
+
+    while (current && current->index != target_index)
     {
-        current->next = nodes[i];
         current = current->next;
-        i++;
+        moves++;
     }
-    current->next = NULL;
+    return moves;
 }
 
-void k_sort(t_stack *stack_a, int k)
+void move_max_to_top(t_stack *stack_a, t_stack *stack_b, int max_index)
 {
-    if (!stack_a || !stack_a->top)
+    int moves_rb = find_moves_to_top(stack_b, max_index);
+    int moves_rrb = stack_length(stack_b) - moves_rb;
+
+    if (moves_rb <= moves_rrb)
+    {
+        while (stack_b->top->index != max_index)
+            rb(stack_b);
+    }
+    else
+    {
+        while (stack_b->top->index != max_index)
+            rrb(stack_b);
+    }
+    pa(stack_a, stack_b);
+}
+
+void k_sort(t_stack *stack_a)
+{
+    if (!stack_a || is_empty(stack_a))
         return;
     
     int size = stack_length(stack_a);
-    t_node **nodes = malloc(size * sizeof(t_node *));
-    if (!nodes)
-        return;
+    t_stack stack_b;
+    init_stack(&stack_b);
     
-    store_nodes(stack_a, nodes, size);
-    partial_sort(stack_a, k);
-    rebuild_stack(stack_a, nodes, size);
-    
-    free(nodes);
+    int chunk_size = (int)ft_sqrt(size) * 7 / 5;
+    push_to_b_in_chunks(stack_a, &stack_b, chunk_size);
+
+    while (size-- > 0)
+        move_max_to_top(stack_a, &stack_b, size);
 }
