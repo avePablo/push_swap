@@ -55,6 +55,24 @@ void move_max_to_top(t_stack *stack_a, t_stack *stack_b, int max_index)
     pa(stack_a, stack_b);
 }
 
+void reverse_stack(t_stack *stack_a)
+{
+    t_node *prev = NULL;
+    t_node *current = stack_a->top;
+    t_node *next = NULL;
+
+    while (current != NULL)
+    {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+
+    stack_a->top = prev;
+}
+
+
 void k_sort(t_stack *stack_a)
 {
     if (!stack_a || is_empty(stack_a))

@@ -80,14 +80,14 @@ int main(int argc, char *argv[])
 
     if (argc > 1)
         get_nums(argc, argv, stack_a); 
-       
+    reverse_stack(stack_a);   
     if (!is_empty(stack_a)) 
         assign_indices(stack_a);
     node_repeat(stack_a);
-    print_index(stack_a);
+    // print_index(stack_a);
     k_sort(stack_a);
     
-    print_stack(stack_a);
+    // print_stack(stack_a);
 
     free(stack_a);
     free(stack_b);

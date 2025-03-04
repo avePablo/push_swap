@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/04 17:41:28 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/04 20:54:55 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int ft_isvalid(char *args[]);
 
 void reverse_indices(t_stack *stack_a);
 
-
+void reverse_stack(t_stack *stack_a);
 
 // int	ft_isvalid(char *args[]);
 
