@@ -22,6 +22,47 @@ void print_index(t_stack *stack)
     }
 }
 
+void	comprove_int(char **num)
+{
+	int		i;
+	char	*str;
+	long	number;
+
+	i = 0;
+	while (num[i] != NULL)
+	{
+		str = num[i];
+		if (str == NULL || *str == '\0')
+		{
+			free_matrix(num);
+			ft_printf("vacío\n");
+            exit(1);
+		}
+		number = ft_atol(str);
+		if (number > INT_MAX || number < INT_MIN)
+		{
+			free_matrix(num);
+			ft_printf("mucho int\n");
+            exit(1);
+		}
+		i++;
+	}
+}
+
+void sp_cases(t_stack *stack_a, t_stack *stack_b)
+{
+        if (stack_length(stack_a) == 2)
+			sa(stack_a);
+		else if (stack_length(stack_a) == 3)
+			sort_three_node(stack_a);
+		else if (stack_length(stack_a) == 4)
+			sort_four_node(stack_a, stack_b);
+		else if (stack_length(stack_a) == 5)
+			sort_five_node(stack_a, stack_b);
+		else
+			k_sort(stack_a);
+}
+
 int node_repeat(t_stack *stack)
 {
      t_node *current = stack->top;
@@ -48,8 +89,7 @@ int get_nums(int argc, char *argv[], t_stack *stack_a)
     while (i < argc)
     {
         args = ft_split(argv[i], ' ');
-        if (args == NULL)
-            exit(1);
+        comprove_int(args);
         j = 0;
         while (args[j] != NULL)
         {
@@ -85,7 +125,8 @@ int main(int argc, char *argv[])
         assign_indices(stack_a);
     node_repeat(stack_a);
     // print_index(stack_a);
-    k_sort(stack_a);
+
+    sp_cases(stack_a, stack_b);
     
     // print_stack(stack_a);
 

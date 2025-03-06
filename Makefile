@@ -17,6 +17,7 @@ SRC =	./mandatory/src/utils.c \
 		./mandatory/src/moves_1.c \
 		./mandatory/src/moves_2.c \
 		./mandatory/src/ksort.c \
+		./mandatory/src/sp_cases.c \
 		./mandatory/src/index.c
 
 OBJ = $(SRC:.c=.o)

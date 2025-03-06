@@ -50,3 +50,16 @@ void rrr(t_stack *stack_a, t_stack *stack_b)
     rrb(stack_b);
     ft_printf("rrr\n");
 }
+
+void	free_matrix(char **num)
+{
+	int	i;
+
+	i = 0;
+	while (num[i])
+	{
+		free(num[i]);
+		i++;
+	}
+	free(num);
+}

@@ -6,7 +6,7 @@
 /*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/04 20:54:55 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/06 17:12:04 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ typedef struct s_stack {
     t_node *top;
 } t_stack;
 
+void push_to_b_in_chunks(t_stack *stack_a, t_stack *stack_b, int chunk_size);
+
+int find_moves_to_top(t_stack *stack, int target_index);
+
+void move_max_to_top(t_stack *stack_a, t_stack *stack_b, int max_index);
+
+void reverse_stack(t_stack *stack_a);
+
 void store_nodes(t_stack *stack_a, t_node **nodes, int size);
 
 void sort_nodes(t_node **nodes, int size);
@@ -46,9 +54,9 @@ void print_stack(t_stack *stack);
 
 void print_index(t_stack *stack);
 
-int node_repeat(t_stack *stack);
+int  node_repeat(t_stack *stack);
 
-int get_nums(int argc, char *argv[], t_stack *stack_a);
+int  get_nums(int argc, char *argv[], t_stack *stack_a);
 
 void sa(t_stack *stack_a);
 
@@ -87,6 +95,16 @@ int ft_isvalid(char *args[]);
 void reverse_indices(t_stack *stack_a);
 
 void reverse_stack(t_stack *stack_a);
+
+void sort_three_node(t_stack *stack_a);
+
+void sort_four_node(t_stack *stack_a, t_stack *stack_b);
+
+void sort_five_node(t_stack *stack_a, t_stack *stack_b);
+
+int is_sorted(t_stack *stack);
+
+void	free_matrix(char **num);
 
 // int	ft_isvalid(char *args[]);
 
