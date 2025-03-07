@@ -7,10 +7,10 @@ int is_sorted(t_stack *stack)
     while (current && current->next)
     {
         if (current->value > current->next->value)
-            return 0;  // No está ordenado
+            return 0;  
         current = current->next;
     }
-    return 1;  // Está ordenado
+    return 1;  
 }
 
 void sort_three_node(t_stack *stack_a)

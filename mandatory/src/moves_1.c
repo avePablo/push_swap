@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-// Swap para la pila A
 void sa(t_stack *stack_a)
 {
     t_node *first;
@@ -17,7 +16,6 @@ void sa(t_stack *stack_a)
     ft_printf("sa\n");
 }
 
-// Swap para la pila B
 void sb(t_stack *stack_b)
 {
     t_node *first;
@@ -34,7 +32,6 @@ void sb(t_stack *stack_b)
     ft_printf("sb\n");
 }
 
-// Swap simultáneo (sa y sb)
 void ss(t_stack *stack_a, t_stack *stack_b)
 {
     sa(stack_a);
@@ -42,7 +39,6 @@ void ss(t_stack *stack_a, t_stack *stack_b)
     ft_printf("ss\n");
 }
 
-// Push de B a A
 void pa(t_stack *stack_a, t_stack *stack_b)
 {
     t_node *temp;
@@ -57,7 +53,6 @@ void pa(t_stack *stack_a, t_stack *stack_b)
     ft_printf("pa\n");
 }
 
-// Push de A a B
 void pb(t_stack *stack_a, t_stack *stack_b)
 {
     t_node *temp;

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-// Rotate para la pila A
+
 void ra(t_stack *stack_a)
 {
     t_node *first;
@@ -19,7 +19,6 @@ void ra(t_stack *stack_a)
     ft_printf("ra\n");
 }
 
-// Rotate para la pila B
 void rb(t_stack *stack_b)
 {
     t_node *first;
@@ -38,7 +37,6 @@ void rb(t_stack *stack_b)
     ft_printf("rb\n");
 }
 
-// Rotate simultáneo (ra y rb)
 void rr(t_stack *stack_a, t_stack *stack_b)
 {
     ra(stack_a);
@@ -46,7 +44,6 @@ void rr(t_stack *stack_a, t_stack *stack_b)
     ft_printf("rr\n");
 }
 
-// Reverse rotate para la pila A
 void rra(t_stack *stack_a)
 {
     t_node *last;
@@ -65,7 +62,6 @@ void rra(t_stack *stack_a)
     ft_printf("rra\n");
 }
 
-// Reverse rotate para la pila B
 void rrb(t_stack *stack_b)
 {
     t_node *last;

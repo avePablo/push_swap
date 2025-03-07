@@ -43,7 +43,6 @@ int	ft_isvalid(char *args[])
 	return (1);
 }
 
-// Reverse rotate simultáneo (rra y rrb)
 void rrr(t_stack *stack_a, t_stack *stack_b)
 {
     rra(stack_a);

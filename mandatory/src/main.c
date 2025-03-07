@@ -1,27 +1,5 @@
 #include "push_swap.h"
 
-void print_stack(t_stack *stack)
-{
-    t_node *current = stack->top;
-
-    while (current)
-    {
-        ft_printf("%d\n", current->value);
-        current = current->next;
-    }
-}
-
-void print_index(t_stack *stack)
-{
-    t_node *current = stack->top;
-
-    while (current)
-    {
-        ft_printf("%d\n", current->index);
-        current = current->next;
-    }
-}
-
 void	comprove_int(char **num)
 {
 	int		i;
@@ -124,11 +102,11 @@ int main(int argc, char *argv[])
     if (!is_empty(stack_a)) 
         assign_indices(stack_a);
     node_repeat(stack_a);
-    // print_index(stack_a);
+    print_index(stack_a);
 
     sp_cases(stack_a, stack_b);
     
-    // print_stack(stack_a);
+    print_stack(stack_a);
 
     free(stack_a);
     free(stack_b);

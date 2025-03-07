@@ -12,19 +12,16 @@
 
 #include "push_swap.h"
 
-// Función para inicializar una pila
 void init_stack(t_stack *stack) 
 {
     stack->top = NULL;
 }
 
-// Función para verificar si la pila está vacía
 int is_empty(t_stack *stack) 
 {
     return (stack->top == NULL);
 }
 
-// Función para agregar un elemento a la pila (push)
 void push(t_stack *stack, int value) 
 {
   

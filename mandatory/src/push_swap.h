@@ -106,52 +106,8 @@ int is_sorted(t_stack *stack);
 
 void	free_matrix(char **num);
 
-// int	ft_isvalid(char *args[]);
+void print_index(t_stack *stack);
 
-// void init_stack(t_stack *stack);
-
-// int is_empty(t_stack *stack);
-
-// void push(t_stack *stack, int value);
-
-// void sa(t_stack *stack_a);
-
-// void sb(t_stack *stack_b);
-
-// void ss(t_stack *stack_a, t_stack *stack_b);
-
-// void pa(t_stack *stack_a, t_stack *stack_b);
-
-// void pb(t_stack *stack_a, t_stack *stack_b);
-
-// void ra(t_stack *stack_a);
-
-// void rb(t_stack *stack_b);
-
-// void rr(t_stack *stack_a, t_stack *stack_b);
-
-// void rra(t_stack *stack_a);
-
-// void rrb(t_stack *stack_b);
-
-// void rrr(t_stack *stack_a, t_stack *stack_b);
-
-// int stack_length(t_stack *stack);
-
-// void assign_indices(t_stack *stack_a);
-
-// void store_nodes(t_stack *stack_a, t_node **nodes, int size);
-
-// void sort_nodes(t_node **nodes, int size);
-
-// void assign_sorted_indices(t_node **nodes, int size);
-
-// void k_sort(t_stack *stack_a, int k);
-
-// void partial_sort(t_stack *stack_a, int k);
-
-// void rebuild_stack(t_stack *stack_a, t_node **nodes, int size);
-
-// double sqrt(double nbr); 
+void print_stack(t_stack *stack);
 
 #endif
