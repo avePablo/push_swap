@@ -102,11 +102,11 @@ int main(int argc, char *argv[])
     if (!is_empty(stack_a)) 
         assign_indices(stack_a);
     node_repeat(stack_a);
-    print_index(stack_a);
+    // print_index(stack_a);
 
     sp_cases(stack_a, stack_b);
     
-    print_stack(stack_a);
+    // print_stack(stack_a);
 
     free(stack_a);
     free(stack_b);

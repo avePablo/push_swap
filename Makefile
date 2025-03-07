@@ -18,7 +18,7 @@ SRC =	./mandatory/src/utils.c \
 		./mandatory/src/ksort.c \
 		./mandatory/src/sp_cases.c \
 		./mandatory/src/index.c \
-		./mandatory/src/print.c
+		# ./mandatory/src/prints.c
 
 OBJ = $(SRC:.c=.o)
 

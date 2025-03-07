@@ -106,8 +106,10 @@ int is_sorted(t_stack *stack);
 
 void	free_matrix(char **num);
 
-void print_index(t_stack *stack);
+//printers
 
-void print_stack(t_stack *stack);
+// void print_index(t_stack *stack);
+
+// void print_stack(t_stack *stack);
 
 #endif
