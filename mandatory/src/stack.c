@@ -3,45 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:47:24 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/02/27 16:49:54 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/21 15:59:04 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void init_stack(t_stack *stack) 
+void	init_stack(t_stack *stack)
 {
-    stack->top = NULL;
+	stack->top = NULL;
 }
 
-int is_empty(t_stack *stack) 
+int	is_empty(t_stack *stack)
 {
-    return (stack->top == NULL);
+	return (stack->top == NULL);
 }
 
-void push(t_stack *stack, int value) 
+void	push(t_stack *stack, int value)
 {
-  
-    t_node *new_node = malloc(sizeof(t_node));
-    if (!new_node)
-        return;
-    new_node->value = value;
-    new_node->next = stack->top;
-    stack->top = new_node;
+	t_node	*new_node;
+
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return ;
+	new_node->value = value;
+	new_node->next = stack->top;
+	stack->top = new_node;
 }
 
-int stack_length(t_stack *stack)
+int	stack_length(t_stack *stack)
 {
-    int length = 0;
-    t_node *current = stack->top;
+	int		length;
+	t_node	*current;
 
-    while (current)
-    {
-        length++;
-        current = current->next;
-    }
-    return length;
+	length = 0;
+	current = stack->top;
+	while (current)
+	{
+		length++;
+		current = current->next;
+	}
+	return (length);
 }

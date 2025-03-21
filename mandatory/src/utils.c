@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 15:56:15 by pabalvar          #+#    #+#             */
+/*   Updated: 2025/03/21 15:58:35 by pabalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_sqrt(int num)
@@ -21,33 +33,32 @@ int	ft_sqrt(int num)
 
 int	ft_isvalid(char *args[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-
-	while(args[i])
+	while (args[i])
 	{
 		j = 0;
-		while(args[i][j])
-			{
-				if (args[i][j] == '-')
-					j++;
-				if (!(args[i][j] >= '0' && args[i][j] <= '9'))
-					return (0);
+		while (args[i][j])
+		{
+			if (args[i][j] == '-')
 				j++;
-			}
-	i++;
+			if (!(args[i][j] >= '0' && args[i][j] <= '9'))
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
 
-void rrr(t_stack *stack_a, t_stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-    rra(stack_a);
-    rrb(stack_b);
-    ft_printf("rrr\n");
+	rra(stack_a);
+	rrb(stack_b);
+	ft_printf("rrr\n");
 }
 
 void	free_matrix(char **num)

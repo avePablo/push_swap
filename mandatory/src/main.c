@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 13:47:26 by pabalvar          #+#    #+#             */
+/*   Updated: 2025/03/21 13:57:41 by pabalvar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	comprove_int(char **num)
@@ -95,9 +107,11 @@ int main(int argc, char *argv[])
 
     init_stack(stack_a);
     init_stack(stack_b);
-
+    
     if (argc > 1)
         get_nums(argc, argv, stack_a); 
+    if (is_sorted(stack_a) == 0)
+        exit (0);
     reverse_stack(stack_a);   
     if (!is_empty(stack_a)) 
         assign_indices(stack_a);
