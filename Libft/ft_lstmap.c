@@ -6,12 +6,11 @@
 /*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 19:43:03 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/01/29 19:43:33 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:41:32 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
