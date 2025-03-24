@@ -6,7 +6,7 @@
 /*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:56:15 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/21 17:01:35 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:29:35 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_isvalid(char *args[])
 		j = 0;
 		while (args[i][j])
 		{
-			if (args[i][j] == '-')
+			if (args[i][j] == '-' || args[i][j] == '+')
 				j++;
 			if (!(args[i][j] >= '0' && args[i][j] <= '9'))
 				return (0);
@@ -72,4 +72,19 @@ void	free_matrix(char **num)
 		i++;
 	}
 	free(num);
+}
+
+void	free_split(char **array)
+{
+	int	i;
+
+	if (!array)
+		return ;
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

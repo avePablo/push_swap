@@ -6,7 +6,7 @@
 /*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:47:26 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/21 17:07:39 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:26:52 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ int	get_nums(int argc, char *argv[], t_stack *stack_a)
 		{
 			if (ft_isvalid(args) == 0)
 			{
-				ft_printf("%s\n", "caracter no vale");
 				exit(1);
 			}
 			num = ft_atoi(args[j]);
 			push(stack_a, num);
 			j++;
 		}
+		free_split(args);
 		i++;
 	}
 	return (i - 1);
@@ -114,12 +114,16 @@ int	main(int argc, char *argv[])
 		get_nums(argc, argv, stack_a);
 	reverse_stack(stack_a);
 	if (is_sorted(stack_a) == 1)
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
 		exit(0);
+	}
 	if (!is_empty(stack_a))
 		assign_indices(stack_a);
 	node_repeat(stack_a);
 	sp_cases(stack_a, stack_b);
-	free(stack_a);
-	free(stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

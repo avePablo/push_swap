@@ -6,7 +6,7 @@
 /*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:59:15 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/21 17:00:54 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:18:00 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,17 @@ void	sort_five_node(t_stack *stack_a, t_stack *stack_b)
 		sb(stack_b);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_node	*temp;
+
+	while (stack->top)
+	{
+		temp = stack->top;
+		stack->top = stack->top->next;
+		free(temp);
+	}
+	free(stack);
 }

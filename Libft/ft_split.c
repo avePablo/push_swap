@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabalvar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:38:25 by pabalvar          #+#    #+#             */
-/*   Updated: 2024/09/26 13:38:27 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:02:25 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ static void	ft_free_all(int p, char **dest)
 		p--;
 	}
 	free(dest);
-	dest = NULL;
-	return ;
 }
 
 static char	**asig_word(char const *s, char c, char **dest)

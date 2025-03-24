@@ -6,7 +6,7 @@
 /*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/21 16:22:42 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:19:48 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,14 @@ int					is_sorted(t_stack *stack);
 
 void				free_matrix(char **num);
 
+void				free_stack(t_stack *stack);
+
+void				free_split(char **array);
+
+void				free_stack(t_stack *stack);
+
 // printers
 
 // void print_index(t_stack *stack);
-
-void				print_stack(t_stack *stack);
 
 #endif
