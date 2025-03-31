@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:32:55 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/21 16:32:57 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/31 18:31:35 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,7 @@ void	assign_indices(t_stack *stack_a)
 	free(nodes);
 }
 
-void	reverse_indices(t_stack *stack_a)
+void error_handler()
 {
-	int		size;
-	t_node	*current;
-
-	size = stack_length(stack_a);
-	current = stack_a->top;
-	while (current)
-	{
-		current->index = size - 1 - current->index;
-		current = current->next;
-	}
+	write(2, "error\n", 6);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:47:26 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/24 17:26:52 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/31 18:31:40 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	comprove_int(char **num)
 		if (str == NULL || *str == '\0')
 		{
 			free_matrix(num);
-			ft_printf("vacío\n");
+			error_handler();
 			exit(1);
 		}
 		number = ft_atol(str);
 		if (number > INT_MAX || number < INT_MIN)
 		{
 			free_matrix(num);
-			ft_printf("mucho int\n");
+			error_handler();
 			exit(1);
 		}
 		i++;
@@ -50,7 +50,7 @@ void	sp_cases(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_length(stack_a) == 5)
 		sort_five_node(stack_a, stack_b);
 	else
-		k_sort(stack_a);
+		k_sort(stack_a, stack_b);
 }
 
 int	node_repeat(t_stack *stack)
@@ -62,7 +62,7 @@ int	node_repeat(t_stack *stack)
 	{
 		if (current->value == current->next->value)
 		{
-			ft_printf("repes\n");
+			error_handler();
 			exit(1);
 		}
 		current = current->next;
@@ -87,6 +87,7 @@ int	get_nums(int argc, char *argv[], t_stack *stack_a)
 		{
 			if (ft_isvalid(args) == 0)
 			{
+				error_handler();
 				exit(1);
 			}
 			num = ft_atoi(args[j]);
@@ -96,6 +97,7 @@ int	get_nums(int argc, char *argv[], t_stack *stack_a)
 		free_split(args);
 		i++;
 	}
+	node_repeat(stack_a);
 	return (i - 1);
 }
 
@@ -106,8 +108,8 @@ int	main(int argc, char *argv[])
 
 	stack_a = malloc(sizeof(t_stack));
 	stack_b = malloc(sizeof(t_stack));
-	if (!stack_a || !stack_b)
-		return (1);
+	if (!stack_a || !stack_b)	
+	return (1);
 	init_stack(stack_a);
 	init_stack(stack_b);
 	if (argc > 1)
@@ -121,7 +123,6 @@ int	main(int argc, char *argv[])
 	}
 	if (!is_empty(stack_a))
 		assign_indices(stack_a);
-	node_repeat(stack_a);
 	sp_cases(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);

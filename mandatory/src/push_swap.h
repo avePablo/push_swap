@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/24 17:19:48 by pabalvar         ###   ########.fr       */
+/*   Updated: 2025/03/31 18:31:56 by kfuto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void				partial_sort(t_stack *stack_a, int k);
 
 void				rebuild_stack(t_stack *stack_a, t_node **nodes, int size);
 
-void				k_sort(t_stack *stack_a);
+void				k_sort(t_stack *stack_a,t_stack *stack_b);
 
 void				print_stack(t_stack *stack);
 
@@ -115,6 +115,8 @@ void				free_stack(t_stack *stack);
 void				free_split(char **array);
 
 void				free_stack(t_stack *stack);
+
+void 				error_handler();
 
 // printers
 
