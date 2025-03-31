@@ -1,5 +1,5 @@
--checker? como entregar?                            
+-checker? como entregar?                            HECHO
 -exit(1)? mensajitos?                               HECHO
--estudiar sp_cases + repaso de todo
+-estudiar sp_cases + repaso de todo                 
 -return en void?                                    HECHO
--repasar normi etc...                               
+-repasar normi etc...                               HECHO

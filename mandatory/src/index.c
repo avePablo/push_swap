@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:32:55 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/31 18:31:35 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/31 19:29:07 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	assign_indices(t_stack *stack_a)
 	free(nodes);
 }
 
-void error_handler()
+void	error_handler(void)
 {
 	write(2, "error\n", 6);
 }

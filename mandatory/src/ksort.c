@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ksort.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:32:38 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/31 18:31:38 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/31 19:00:20 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ void	reverse_stack(t_stack *stack_a)
 	stack_a->top = prev;
 }
 
-void	k_sort(t_stack *stack_a,t_stack *stack_b)
+void	k_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	int		size;
-	int		chunk_size;
+	int	size;
+	int	chunk_size;
 
 	if (!stack_a || is_empty(stack_a))
 		return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:47:24 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/31 18:32:00 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/31 19:01:19 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,31 @@ int	stack_length(t_stack *stack)
 		current = current->next;
 	}
 	return (length);
+}
+
+void	comprove_int(char **num)
+{
+	int		i;
+	char	*str;
+	long	number;
+
+	i = 0;
+	while (num[i] != NULL)
+	{
+		str = num[i];
+		if (str == NULL || *str == '\0')
+		{
+			free_matrix(num);
+			error_handler();
+			exit(1);
+		}
+		number = ft_atol(str);
+		if (number > INT_MAX || number < INT_MIN)
+		{
+			free_matrix(num);
+			error_handler();
+			exit(1);
+		}
+		i++;
+	}
 }

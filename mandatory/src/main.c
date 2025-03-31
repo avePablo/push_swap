@@ -3,41 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:47:26 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/31 18:31:40 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/31 19:27:59 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	comprove_int(char **num)
-{
-	int		i;
-	char	*str;
-	long	number;
-
-	i = 0;
-	while (num[i] != NULL)
-	{
-		str = num[i];
-		if (str == NULL || *str == '\0')
-		{
-			free_matrix(num);
-			error_handler();
-			exit(1);
-		}
-		number = ft_atol(str);
-		if (number > INT_MAX || number < INT_MIN)
-		{
-			free_matrix(num);
-			error_handler();
-			exit(1);
-		}
-		i++;
-	}
-}
 
 void	sp_cases(t_stack *stack_a, t_stack *stack_b)
 {
@@ -53,7 +26,7 @@ void	sp_cases(t_stack *stack_a, t_stack *stack_b)
 		k_sort(stack_a, stack_b);
 }
 
-int	node_repeat(t_stack *stack)
+int	node_repeat(t_stack *stack, t_stack *stack_b)
 {
 	t_node	*current;
 
@@ -63,6 +36,8 @@ int	node_repeat(t_stack *stack)
 		if (current->value == current->next->value)
 		{
 			error_handler();
+			free_stack(stack);
+			free_stack(stack_b);
 			exit(1);
 		}
 		current = current->next;
@@ -70,34 +45,43 @@ int	node_repeat(t_stack *stack)
 	return (0);
 }
 
-int	get_nums(int argc, char *argv[], t_stack *stack_a)
+void	get_valid(t_stack *stack_a, char **args, t_stack *stack_b)
 {
-	char			**args;
-	long long int	num;
-	int				i;
 	int				j;
+	long long int	num;
+
+	j = 0;
+	while (args[j] != NULL)
+	{
+		if (ft_isvalid(args) == 0)
+		{
+			error_handler();
+			free_split(args);
+			free_stack(stack_a);
+			free_stack(stack_b);
+			exit(1);
+		}
+		num = ft_atoi(args[j]);
+		push(stack_a, num);
+		j++;
+	}
+}
+
+int	get_nums(int argc, char *argv[], t_stack *stack_a, t_stack *stack_b)
+{
+	char	**args;
+	int		i;
 
 	i = 1;
 	while (i < argc)
 	{
 		args = ft_split(argv[i], ' ');
 		comprove_int(args);
-		j = 0;
-		while (args[j] != NULL)
-		{
-			if (ft_isvalid(args) == 0)
-			{
-				error_handler();
-				exit(1);
-			}
-			num = ft_atoi(args[j]);
-			push(stack_a, num);
-			j++;
-		}
+		get_valid(stack_a, args, stack_b);
 		free_split(args);
 		i++;
 	}
-	node_repeat(stack_a);
+	node_repeat(stack_a, stack_b);
 	return (i - 1);
 }
 
@@ -108,12 +92,12 @@ int	main(int argc, char *argv[])
 
 	stack_a = malloc(sizeof(t_stack));
 	stack_b = malloc(sizeof(t_stack));
-	if (!stack_a || !stack_b)	
-	return (1);
+	if (!stack_a || !stack_b)
+		return (1);
 	init_stack(stack_a);
 	init_stack(stack_b);
 	if (argc > 1)
-		get_nums(argc, argv, stack_a);
+		get_nums(argc, argv, stack_a, stack_b);
 	reverse_stack(stack_a);
 	if (is_sorted(stack_a) == 1)
 	{

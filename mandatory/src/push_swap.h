@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfuto <kfuto@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pabalvar <pabalvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:48:14 by pabalvar          #+#    #+#             */
-/*   Updated: 2025/03/31 18:31:56 by kfuto            ###   ########.fr       */
+/*   Updated: 2025/03/31 19:28:47 by pabalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,7 @@ void				partial_sort(t_stack *stack_a, int k);
 
 void				rebuild_stack(t_stack *stack_a, t_node **nodes, int size);
 
-void				k_sort(t_stack *stack_a,t_stack *stack_b);
-
-void				print_stack(t_stack *stack);
-
-void				print_index(t_stack *stack);
-
-int					node_repeat(t_stack *stack);
-
-int					get_nums(int argc, char *argv[], t_stack *stack_a);
+void				k_sort(t_stack *stack_a, t_stack *stack_b);
 
 void				sa(t_stack *stack_a);
 
@@ -116,10 +108,8 @@ void				free_split(char **array);
 
 void				free_stack(t_stack *stack);
 
-void 				error_handler();
+void				error_handler(void);
 
-// printers
-
-// void print_index(t_stack *stack);
+void				comprove_int(char **num);
 
 #endif

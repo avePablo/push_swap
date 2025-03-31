@@ -1,6 +1,6 @@
 NAME = push_swap
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -17,8 +17,7 @@ SRC =	./mandatory/src/utils.c \
 		./mandatory/src/moves_2.c \
 		./mandatory/src/ksort.c \
 		./mandatory/src/sp_cases.c \
-		./mandatory/src/index.c \
-		./mandatory/src/prints.c
+		./mandatory/src/index.c 
 
 OBJ = $(SRC:.c=.o)
 
